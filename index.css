@@ -1,0 +1,163 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+.wrapper__background-sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: grid;
+    grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+    grid-template-areas:
+    ". . . roofAngle2 roofAngle3 tunnel sunbeam1 sun"
+    ". . roofAngle1 roof roof roofAngle4 sunbeam2 sunbeam3"
+    ". . house house house house . ."
+    ". . house house house house . ."
+    ". . house house house house . ."
+    ". . house house house house . ."
+    "earth earth earth earth earth earth earth earth"
+    "earth earth earth earth earth earth earth earth";
+}
+.earth {
+    width: 100%;
+    height: 100%;
+    grid-area: earth;
+    background-color: rgb(43, 219, 43);
+}
+.house {
+    width: 100%;
+    height: 100%;
+    grid-area: house;
+    background-color: rgb(87, 14, 14);
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    grid-template-areas: 
+    ". . . ."
+    ". window door ."
+    ". . door ."
+    ;
+}
+.window-block {
+    width: 100%;
+    height: 100%;
+    grid-area: window;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.window {
+    width: 65%;
+    height: 65%;
+    background-color: rgb(224, 106, 9);
+    border-radius: 50%;
+    border: 1vh solid rgb(165, 165, 165);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frame {
+    position: absolute;
+    background-color: rgb(165, 165, 165);
+}
+.first-frame {
+    height: 100%;
+    width: 1vh;
+}
+.second-frame {
+    height: 1vh;
+    width: 100%;
+}
+.door {
+    width: 100%;
+    height: 100%;
+    grid-area: door;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgb(146, 64, 33);
+}
+.door-knob {
+    width: 1.5vh;
+    height: 1.5vh;
+    background-color: gold;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.sun {
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    grid-area: sun;
+    border-radius: 20% 0 10% 50%;
+}
+.sunbeam {
+    width: 60%;
+    height: 20%;
+    border-radius: 8px;
+    align-self: center;
+    justify-self: center;
+    background-color: yellow;
+animation: k-sunbeam 5s ease-in-out 0s infinite reverse;
+}
+.first-sunbeam {
+    grid-area: sunbeam1;
+}
+.second-sunbeam {
+    transform: rotate(-30deg);
+    grid-area: sunbeam2;
+    margin-right: -135px;
+    margin-top: -25px;
+}
+.third-sunbeam {
+    transform: rotate(90deg);
+    grid-area: sunbeam3;
+    margin-top: 35px;
+}
+.roof {
+    width: 100%;
+    height: 100%;
+    background-color: goldenrod;
+    grid-area: roof;
+}
+
+.roof-angle-left {
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(to left top, goldenrod 50%, transparent 50%);
+}
+
+.roof-angle-right {
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(to right top, goldenrod 50%, transparent 50%);
+}
+
+.roof-angle1 {
+    grid-area: roofAngle1;
+}
+.roof-angle2 {
+    grid-area: roofAngle2;
+}
+.roof-angle3 {
+    grid-area: roofAngle3;
+}
+.roof-angle4 {
+    grid-area: roofAngle4;
+}
+.tunnel {
+    width: 50%;
+    height: 100%;
+    background-color: gray;
+    grid-area: tunnel;
+    margin-top: 40%;
+}
+
+@keyframes k-sunbeam {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
